@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dashboard</title>
+
+    <link rel="shortcut icon" href="assets/ccsjdm-favicon.png" type="image/x-icon">
+
+    <link href="css/main.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="flex h-screen overflow-hidden bg-gray-300">
+
+        <!-- here is the sidebar menu located -->
+        <aside id="sidebar-multi-level-sidebar" class="w-56 h-screen shadow-lg transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+            <div class="h-full px-3 py-4 overflow-y-auto bg-[#E9BBB5] dark:bg-gray-800">
+
+                <!-- this is for the logo -->
+                <div class="flex items-center flex-col">
+                    <img src="assets/ccsjdm-favicon.png" alt="CCSJDM Logo" class="w-20 h-20 mx-auto"><span class="text-xs font-bold">CCSJDM</span>
+                </div>
+
+            <!-- this is for the main menu of the side bar -->    
+            <ul class="mt-5 space-y-2 font-medium">
+                <li>
+                    <a href="dashboard.html" class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                        <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                        <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+                        </svg>
+                        <span class="ml-3">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-menu" data-collapse-toggle="dropdown-menu" onclick="toggleDropDown('dropdown-menu')">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd" d="M2.25 2.25a.75.75 0 000 1.5H3v10.5a3 3 0 003 3h1.21l-1.172 3.513a.75.75 0 001.424.474l.329-.987h8.418l.33.987a.75.75 0 001.422-.474l-1.17-3.513H18a3 3 0 003-3V3.75h.75a.75.75 0 000-1.5H2.25zm6.04 16.5l.5-1.5h6.42l.5 1.5H8.29zm7.46-12a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0v-6zm-3 2.25a.75.75 0 00-1.5 0v3.75a.75.75 0 001.5 0V9zm-3 2.25a.75.75 0 00-1.5 0v1.5a.75.75 0 001.5 0v-1.5z" clip-rule="evenodd" />
+                        </svg>
+                          
+                          
+                        <span class="flex-1 ml-3 text-left whitespace-nowrap">Rankings</span>
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <ul id="dropdown-menu" class="hidden py-2 space-y-2">
+                        <li>
+                            <a href="overall-rankings.html" class="nav-link flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Overall</a>
+                        </li>
+                        <li>
+                            <a href="departamental-rankings.html" class="nav-link flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Departmental</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="questions.html" class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.366-.777-3.255 0a.75.75 0 01-.988-1.129c1.454-1.272 3.776-1.272 5.23 0 1.513 1.324 1.513 3.518 0 4.842a3.75 3.75 0 01-.837.552c-.676.328-1.028.774-1.028 1.152v.75a.75.75 0 01-1.5 0v-.75c0-1.279 1.06-2.107 1.875-2.502.182-.088.351-.199.503-.331.83-.727.83-1.857 0-2.584zM12 18a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
+                          </svg>
+                          
+                        <span class="flex-1 ml-3 whitespace-nowrap">Questions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="accounts.html" class="nav-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="flex-shrink-0 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                        <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Accounts</span>
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </aside>
+        <!-- end of sidebar menu -->
+
+        <!-- main content container -->
+        <div class="flex flex-col flex-1 overflow-hidden" id="main-container">
+
+            <!-- navbar where the profile is located -->
+            <header class="bg-gray-400 dark:bg-gray-800 shadow-md p-2">
+                <div class="container mx-auto flex items-center justify-between">
+                    <div class="relative ml-auto">
+                        <button type="button"
+                        class="profile-button flex items-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                            <span class="sr-only">Open profile dropdown</span>
+                            <img class="w-8 h-8 rounded-full" src="assets/user-profile.jpg"
+                            alt="Your Name">
+                        </button>
+                        <!-- Profile Dropdown -->
+                        <div id="profileDropdown"
+                            class="hidden absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg">
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-800 dark:text-white hover:bg-gray-100">Profile</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-800 dark:text-white hover:bg-gray-100">Settings</a>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-800 dark:text-white hover:bg-gray-100">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- end of the navbar -->
+
+            <!-- this is where the main content is showing -->
+            <div class="p-4" id="main-content"></div>
+            <!-- end of the main content -->
+
+            <!-- Modal for the departamental rankings -->
+            <div class="modal-container hidden fixed inset-0 z-50 overflow-y-auto justify-center bg-gray-400 bg-opacity-70">
+                <div class="flex items-center justify-center min-h-screen">
+                <div class="modal-content bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 max-w-3xl w-7/12">
+                    <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-xl font-bold text-gray-800">Departamental Rankings</h2>
+                    <button id="modalCloseButton" class="text-gray-700 dark:text-gray-400">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    </div>
+                    <table id="facultyTable" class="w-full">
+                    <thead>
+                        <tr>
+                        <th class="text-center">Faculty ID</th>
+                        <th class="text-center">Faculty Name</th>
+                        <th class="text-center">Average</th>
+                        <th class="text-center">Rank</th>
+                        </tr>
+                    </thead>
+                    <tbody id="modalTableBody">
+                        <!-- Table rows will be populated dynamically -->
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            <!-- end for the departamental rankings -->
+        </div>
+        <!-- end of main content container -->
+    </div>
+
+    <script src="js/script-load-content.js"></script>
+
+    <script src="js/script-profile-dropdown.js"></script>
+
+    <script>
+
+        const modalContainer = document.querySelector('.modal-container');
+        const modalCloseButton = document.getElementById('modalCloseButton');
+        const printButton = document.getElementById('printButton');
+        const modalTableBody = document.getElementById('modalTableBody');
+
+        // Function to create and populate rows for the faculty table
+        function populateFacultyTable(facultyData) {
+            modalTableBody.innerHTML = '';
+            facultyData.forEach(faculty => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td class="border px-4 py-2 text-center">${faculty.id}</td>
+                <td class="border px-4 py-2 text-center">${faculty.name}</td>
+                <td class="border px-4 py-2 text-center">${faculty.average}</td>
+                <td class="border px-4 py-2 text-center">${faculty.rank}</td>
+            `;
+            modalTableBody.appendChild(row);
+            });
+        }
+
+        // Event delegation for cards
+        const mainContent = document.getElementById('main-content');
+        mainContent.addEventListener('click', function(event) {
+            const clickedCard = event.target.closest('.card-container');
+            if (clickedCard) {
+            // Open modal and populate the table
+            modalContainer.classList.remove('hidden');
+            // Replace this dummy data with your actual AJAX call
+            const facultyData = [
+                { id: 1, name: 'John Doe', average: 4.8, rank: 1 },
+                { id: 2, name: 'Jane Smith', average: 4.6, rank: 2 },
+                { id: 3, name: 'Michael Johnson', average: 4.4, rank: 3 },
+                // Add more faculty data as needed
+            ];
+            populateFacultyTable(facultyData);
+            }
+        });
+
+        // Close modal button event listener
+        modalCloseButton.addEventListener('click', () => {
+            modalContainer.classList.add('hidden');
+        });
+
+        // Print button event listener
+        printButton.addEventListener('click', () => {
+            window.print();
+        });
+    </script>
+</body>
+</html>

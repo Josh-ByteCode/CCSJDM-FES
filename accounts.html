@@ -1,0 +1,40 @@
+<!-- this is for the user accounts list only  -->
+
+<form class="bg-white shadow-md rounded-lg px-8 py-4 mt-4">
+  <div class="flex items-center mb-8">
+    <h2 class="text-2xl font-bold flex-1">Faculty Evaluation System Accounts</h2>
+    <div class="flex items-center">
+      <input type="text" class="border border-gray-300 rounded-l-lg py-2 px-4 pr-10 focus:outline-none focus:ring focus:border-blue-500 w-72" placeholder="Search Account or Username....">
+      <div class="p-2 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+      </div>
+    </div>        
+  </div>
+  <div class="overflow-x-auto">
+    <table class="w-full table-auto mx-auto">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="px-4 py-2 text-center">ID</th>
+          <th class="px-4 py-2 text-center">Username</th>
+          <th class="px-4 py-2 text-center">Role</th>
+          <th class="px-4 py-2 text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sample data -->
+        <tr class="bg-gray-100">
+          <td class="border px-4 py-2 text-center">1</td>
+          <td class="border px-4 py-2 text-center">JohnDoe</td>
+          <td class="border px-4 py-2 text-center">Admin</td>
+          <td class="border px-4 py-2 text-center">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded">Edit</button>
+            <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded">Delete</button>
+          </td>
+        </tr>
+        <!-- Add more rows for additional faculty data -->
+      </tbody>
+    </table>
+  </div>
+</form>
